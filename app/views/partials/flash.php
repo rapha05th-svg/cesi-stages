@@ -4,6 +4,10 @@ unset($_SESSION['flash']);
 foreach ($flash as $f):
 ?>
   <div class="flash <?= htmlspecialchars($f['type']) ?>">
-    <?= htmlspecialchars($f['msg']) ?>
+    <?php if ($f['type'] === 'dev'): ?>
+      <?= $f['msg'] ?>
+    <?php else: ?>
+      <?= htmlspecialchars($f['msg']) ?>
+    <?php endif; ?>
   </div>
 <?php endforeach; ?>

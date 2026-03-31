@@ -33,6 +33,12 @@
             </div>
 
             <button type="submit" class="login-submit">Se connecter</button>
+
+            <div style="text-align:center;margin-top:4px;">
+                <a href="/forgot-password" style="font-size:0.82rem;color:#667085;text-decoration:none;">
+                    Mot de passe oublié ?
+                </a>
+            </div>
         </form>
 
         <div class="login-roles">

@@ -1,0 +1,17 @@
+# Claude Code (local settings & permissions)
+.claude/
+
+# Uploads utilisateurs
+uploads/
+public/uploads/
+
+# Scripts utilitaires sensibles (ne pas exposer)
+public/phpinfo.php
+public/repopulate.php
+public/set-password.php
+public/Wishlist.php
+public/style.css
+
+# Fichiers système
+.DS_Store
+Thumbs.db

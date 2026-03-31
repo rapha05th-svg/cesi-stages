@@ -94,6 +94,16 @@ CREATE TABLE company_ratings (
   CONSTRAINT chk_company_rating CHECK (rating BETWEEN 1 AND 5)
 );
 
+CREATE TABLE password_resets (
+  id         INT AUTO_INCREMENT PRIMARY KEY,
+  user_id    INT NOT NULL,
+  token      VARCHAR(64) NOT NULL UNIQUE,
+  expires_at DATETIME NOT NULL,
+  used_at    DATETIME NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_pr_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
 INSERT INTO users (id, email, password_hash, role) VALUES
 (1, 'admin@cesi.fr', '$2y$12$pX2RT6SzKKaBCVo/1//FP.TGCCg8f15Dn4ZUr0vcMg3e9n/Q5BRaa', 'ADMIN'),
 (2, 'thomas.leroy@cesi.fr', '$2y$12$626IoHX9VasXmwVsYVHZ5.54Uvkx2f9e/mW1iDcbqlmQAEB31Drem', 'PILOT'),

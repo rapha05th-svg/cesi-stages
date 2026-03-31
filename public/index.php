@@ -16,6 +16,7 @@ require_once __DIR__ . '/../app/core/Auth.php';
 require_once __DIR__ . '/../app/core/Controller.php';
 require_once __DIR__ . '/../app/core/Csrf.php';
 require_once __DIR__ . '/../app/core/DB.php';
+require_once __DIR__ . '/../app/core/Mailer.php';
 require_once __DIR__ . '/../app/core/Paginator.php';
 require_once __DIR__ . '/../app/core/Router.php';
 require_once __DIR__ . '/../app/core/Validator.php';
@@ -23,6 +24,7 @@ require_once __DIR__ . '/../app/core/View.php';
 
 require_once __DIR__ . '/../app/controllers/HomeController.php';
 require_once __DIR__ . '/../app/controllers/AuthController.php';
+require_once __DIR__ . '/../app/controllers/PasswordResetController.php';
 require_once __DIR__ . '/../app/controllers/CompanyController.php';
 require_once __DIR__ . '/../app/controllers/OfferController.php';
 require_once __DIR__ . '/../app/controllers/StatsController.php';
@@ -43,6 +45,7 @@ require_once __DIR__ . '/../app/models/Pilot.php';
 require_once __DIR__ . '/../app/models/CompanyFavorite.php';
 require_once __DIR__ . '/../app/models/CompanyRating.php';
 require_once __DIR__ . '/../app/models/AdminStats.php';
+require_once __DIR__ . '/../app/models/PasswordReset.php';
 
 require_once __DIR__ . '/../app/models/User.php';
 require_once __DIR__ . '/../app/models/Student.php';

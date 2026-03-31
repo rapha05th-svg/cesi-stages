@@ -6,6 +6,11 @@ $router->get('/login', [AuthController::class, 'showLogin']);
 $router->post('/login', [AuthController::class, 'login']);
 $router->post('/logout', [AuthController::class, 'logout']);
 
+$router->get('/forgot-password', [PasswordResetController::class, 'showForgotPassword']);
+$router->post('/forgot-password', [PasswordResetController::class, 'sendResetEmail']);
+$router->get('/reset-password', [PasswordResetController::class, 'showResetPassword']);
+$router->post('/reset-password', [PasswordResetController::class, 'resetPassword']);
+
 $router->get('/change-password', [AuthController::class, 'showChangePassword']);
 $router->post('/change-password', [AuthController::class, 'changePassword']);
 
