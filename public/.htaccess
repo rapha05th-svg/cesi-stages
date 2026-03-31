@@ -1,0 +1,24 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [QSA,L]
+
+# Bloquer les fichiers sensibles
+<FilesMatch "^(phpinfo|repopulate|set-password|test_db)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Bloquer l'accès direct aux uploads (CV)
+<IfModule mod_rewrite.c>
+    RewriteRule ^uploads/(.*)$ - [F,L]
+</IfModule>
+
+# Empêcher le listing des dossiers
+Options -Indexes
+
+# Bloquer les fichiers cachés (.env, .git, etc.)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
