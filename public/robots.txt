@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /offers
+Allow: /companies
+Allow: /stats
+Allow: /mentions-legales
+
+Disallow: /admin
+Disallow: /login
+Disallow: /logout
+Disallow: /change-password
+Disallow: /my-applications
+Disallow: /wishlist
+Disallow: /favorite-companies
+Disallow: /pilot
+Disallow: /apply
+
+Sitemap: http://www.cesi-stages.local/sitemap.xml

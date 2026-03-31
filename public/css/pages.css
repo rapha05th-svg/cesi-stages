@@ -1,0 +1,342 @@
+/* HOME */
+.hero {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
+    align-items: center;
+    margin-bottom: 34px;
+    padding: 10px 0 8px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--cesi-red-soft);
+    color: var(--cesi-red-dark);
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    font-size: 1.08rem;
+    color: var(--cesi-gray);
+    max-width: 680px;
+    margin-bottom: 24px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    position: relative;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-card {
+    position: absolute;
+    background: #fff;
+    border-radius: 24px;
+    padding: 22px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+    width: 240px;
+}
+
+.hero-card h3 {
+    margin-bottom: 8px;
+    color: var(--cesi-dark);
+}
+
+.hero-card p {
+    margin: 0;
+    color: var(--cesi-gray);
+}
+
+.hero-card-main {
+    top: 18px;
+    left: 20px;
+    border-top: 6px solid var(--cesi-red);
+}
+
+.hero-card-accent {
+    bottom: 26px;
+    right: 10px;
+    background: linear-gradient(135deg, #ffffff 0%, #fff3f4 100%);
+    border: 1px solid #ffd9dc;
+}
+
+.hero-glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(12px);
+}
+
+.hero-glow-1 {
+    width: 180px;
+    height: 180px;
+    background: rgba(215, 25, 32, 0.16);
+    top: 30px;
+    right: 40px;
+}
+
+.hero-glow-2 {
+    width: 130px;
+    height: 130px;
+    background: rgba(17, 24, 39, 0.08);
+    bottom: 30px;
+    left: 40px;
+}
+
+/* SECTION HEADINGS */
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 0.88rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+    color: var(--cesi-red);
+}
+
+/* STATS */
+.stats-section {
+    margin: 14px 0 34px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.stat-box {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfc 100%);
+    border: 1px solid var(--cesi-border);
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-box::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 999px;
+    background: rgba(215, 25, 32, 0.07);
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--cesi-red);
+    margin-bottom: 10px;
+}
+
+.stat-box span {
+    color: var(--cesi-gray);
+    font-weight: 700;
+}
+
+/* FEATURES */
+.feature-section {
+    margin-top: 10px;
+    margin-bottom: 34px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.feature-card {
+    border-radius: 24px;
+    padding: 26px;
+    box-shadow: var(--shadow-sm);
+    min-height: 220px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--cesi-border);
+}
+
+.feature-card h3 {
+    color: var(--cesi-dark);
+    margin-bottom: 14px;
+}
+
+.feature-card p {
+    color: var(--cesi-dark);
+    opacity: 0.88;
+    margin: 0;
+}
+
+.feature-red {
+    background: linear-gradient(135deg, #d71920 0%, #b51218 100%);
+    color: #fff;
+    border: none;
+}
+
+.feature-red h3,
+.feature-red p {
+    color: #fff;
+}
+
+.feature-light {
+    background: linear-gradient(135deg, #fff1f2 0%, #ffe1e4 100%);
+    color: #6b0f14;
+    border: 1px solid #ffd0d5;
+}
+
+.feature-white {
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--cesi-border);
+}
+
+/* FEATURE ICONS */
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+
+.icon-box {
+    background: rgba(215, 25, 32, 0.10);
+    color: var(--cesi-dark);
+}
+
+.feature-red .icon-box {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+}
+
+.feature-light .icon-box {
+    background: rgba(215, 25, 32, 0.12);
+    color: var(--cesi-red);
+}
+
+.feature-icon svg {
+    width: 30px;
+    height: 30px;
+    display: block;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* CTA */
+.cta-banner {
+    margin-top: 12px;
+    border-radius: 28px;
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.96) 0%, rgba(215, 25, 32, 0.94) 100%);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.cta-banner h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.cta-banner p {
+    color: rgba(255,255,255,0.82);
+    margin: 0;
+    max-width: 650px;
+}
+
+.cta-banner .section-kicker {
+    color: #ffd6d9;
+}
+
+.cta-banner-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cta-banner .btn-ghost {
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.08);
+}
+
+/* OFFERS / ENTREPRISES */
+.offers-list,
+.companies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.offer-row,
+.company-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-main,
+.company-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.offer-link,
+.company-link {
+    color: var(--cesi-red);
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.offer-company {
+    color: var(--cesi-dark);
+}
+
+.offer-actions,
+.company-actions,
+.inline-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.offer-actions form,
+.company-actions form,
+.inline-actions form {
+    margin: 0;
+}

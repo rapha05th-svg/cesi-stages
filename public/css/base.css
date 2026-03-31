@@ -1,0 +1,152 @@
+:root {
+    --cesi-red: #d71920;
+    --cesi-red-dark: #b51218;
+    --cesi-red-soft: #fff0f1;
+    --cesi-black: #111111;
+    --cesi-dark: #1b1b22;
+    --cesi-gray: #6b7280;
+    --cesi-light: #f4f6fb;
+    --cesi-surface: #ffffff;
+    --cesi-border: #e5e7eb;
+
+    --shadow-sm: 0 8px 20px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.10);
+    --shadow-lg: 0 24px 60px rgba(215, 25, 32, 0.16);
+
+    --radius-sm: 14px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+
+    --container: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cesi-dark);
+    background:
+        radial-gradient(circle at top left, rgba(215, 25, 32, 0.08), transparent 30%),
+        radial-gradient(circle at top right, rgba(215, 25, 32, 0.06), transparent 25%),
+        linear-gradient(180deg, #f8f9fc 0%, #eef1f6 100%);
+    line-height: 1.55;
+}
+
+a {
+    color: var(--cesi-red);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 32px));
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--cesi-dark);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1.05;
+    margin-bottom: 14px;
+    max-width: 760px;
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 0;
+}
+
+.text-muted {
+    color: var(--cesi-gray);
+}
+/* =====================
+   ANIMATIONS GLOBALES
+===================== */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Classes utilitaires d'animation */
+.anim-fade-up   { animation: fadeInUp 0.45s ease both; }
+.anim-fade      { animation: fadeIn   0.35s ease both; }
+.anim-scale-in  { animation: scaleIn  0.35s ease both; }
+
+/* Délais pour effets en cascade */
+.anim-delay-1 { animation-delay: 0.05s; }
+.anim-delay-2 { animation-delay: 0.10s; }
+.anim-delay-3 { animation-delay: 0.15s; }
+.anim-delay-4 { animation-delay: 0.20s; }
+.anim-delay-5 { animation-delay: 0.25s; }
+
+/* Transitions globales sur les cartes */
+.offer-item-clean,
+.company-card,
+.pilot-app-card,
+.myapps-card,
+.wish-card,
+.dash-stat-card,
+.latest-offer-card,
+.feature-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.offer-item-clean:hover,
+.company-card:hover,
+.pilot-app-card:hover,
+.myapps-card:hover,
+.wish-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(15,23,42,0.10);
+}
+
+/* Focus visible accessible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #d71920;
+    outline-offset: 3px;
+    border-radius: 4px;
+}

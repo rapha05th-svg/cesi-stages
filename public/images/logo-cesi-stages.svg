@@ -1,0 +1,11 @@
+<svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="200" height="120" rx="4" fill="#1a1a1a"/>
+  <rect x="4" y="4" width="192" height="112" rx="3" fill="#C0392B"/>
+  <rect x="22" y="28" width="52" height="8" rx="2" fill="white"/>
+  <rect x="22" y="42" width="38" height="8" rx="2" fill="white"/>
+  <rect x="22" y="56" width="46" height="8" rx="2" fill="white"/>
+  <rect x="86" y="24" width="2" height="56" rx="1" fill="rgba(255,255,255,0.25)"/>
+  <text x="96" y="53" font-family="Georgia, serif" font-size="22" font-weight="700" fill="white" dominant-baseline="central" letter-spacing="1">CESI</text>
+  <text x="96" y="73" font-family="Arial, sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.75)" dominant-baseline="central" letter-spacing="2">STAGES</text>
+  <rect x="0" y="112" width="200" height="3" rx="1" fill="#C0392B"/>
+</svg>

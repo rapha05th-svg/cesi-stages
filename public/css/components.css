@@ -1,0 +1,995 @@
+/* ALERTS */
+.alert {
+    margin-bottom: 18px;
+    padding: 15px 18px;
+    border-radius: 16px;
+    font-weight: 700;
+    border: 1px solid transparent;
+}
+
+.alert-success {
+    background: #eaf8ef;
+    color: #1f7a3d;
+    border-color: #bde0c6;
+}
+
+.alert-error {
+    background: #fdeced;
+    color: #b42318;
+    border-color: #f5c7cb;
+}
+
+.alert-info {
+    background: #eef4ff;
+    color: #1d4ed8;
+    border-color: #cddcff;
+}
+
+/* BUTTONS */
+button,
+.btn,
+input[type="submit"] {
+    appearance: none;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-size: 0.96rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%);
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(215, 25, 32, 0.16);
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.btn-light {
+    background: #fff;
+    color: var(--cesi-red);
+    box-shadow: none;
+}
+
+.btn-hero {
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%);
+    color: #fff;
+}
+
+.btn-ghost {
+    background: rgba(255,255,255,0.50);
+    color: var(--cesi-dark);
+    border: 1px solid rgba(17,17,17,0.10);
+    box-shadow: none;
+}
+
+.btn-ghost:hover {
+    background: rgba(255,255,255,0.85);
+}
+
+/* FORMS */
+label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 13px 14px;
+    border-radius: 14px;
+    border: 1px solid #cfd5dd;
+    background: #fff;
+    color: var(--cesi-dark);
+    font: inherit;
+    outline: none;
+    transition: 0.15s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--cesi-red);
+    box-shadow: 0 0 0 4px rgba(215, 25, 32, 0.10);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+thead tr {
+    background: linear-gradient(90deg, #111827 0%, #1f2937 100%);
+    color: #fff;
+}
+
+th, td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--cesi-border);
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(even) {
+    background: #fafbfc;
+}
+
+tbody tr:hover {
+    background: #fff3f4;
+}
+
+/* SMALL ACTION BUTTONS */
+button.btn-small,
+a.btn-small,
+input.btn-small {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 34px !important;
+    padding: 7px 12px !important;
+    border-radius: 11px !important;
+    font-size: 0.9rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+button.btn-small:hover,
+a.btn-small:hover,
+input.btn-small:hover {
+    transform: none !important;
+    text-decoration: none !important;
+}
+
+button.btn-favorite,
+a.btn-favorite,
+input.btn-favorite {
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%) !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+button.btn-secondary,
+a.btn-secondary,
+input.btn-secondary {
+    background: #f3f4f6 !important;
+    color: var(--cesi-dark) !important;
+    border: 1px solid #d1d5db !important;
+}
+
+/* =========================
+   ICON BOX (COMMUN)
+========================= */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(225, 29, 72, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-red .icon-box {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================
+   ICON TARGET
+========================= */
+.icon-target {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    position: relative;
+}
+
+.feature-white .icon-target,
+.feature-light .icon-target {
+    border-color: #e11d48;
+}
+
+.icon-target::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.feature-white .icon-target::after,
+.feature-light .icon-target::after {
+    background: #e11d48;
+}
+
+/* =========================
+   ICON BUILDING
+========================= */
+.icon-building {
+    width: 20px;
+    height: 24px;
+    background: #111;
+    position: relative;
+    border-radius: 4px;
+}
+
+.icon-building::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    top: 4px;
+    left: 4px;
+    box-shadow:
+        8px 0 #fff,
+        0 8px #fff,
+        8px 8px #fff;
+}
+
+/* =========================
+   ICON BOOKMARK
+========================= */
+.icon-bookmark {
+    position: relative;
+    width: 18px;
+    height: 24px;
+    background: #e11d48;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+    border-radius: 3px 3px 0 0;
+}
+
+/* =========================
+   ICON FILE
+========================= */
+.icon-file {
+    width: 18px;
+    height: 22px;
+    background: #111;
+    border-radius: 3px;
+    position: relative;
+}
+
+.icon-file::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: #fff;
+    top: 5px;
+    left: 5px;
+    box-shadow:
+        0 5px #fff,
+        0 10px #fff;
+}
+/* =========================
+   BOUTON FAVORI (PROPRE)
+========================= */
+
+.btn-favorite {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    border-radius: 20px;
+    border: none;
+
+    background: #e11d48;
+    color: #fff;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.2);
+}
+
+.btn-favorite:hover {
+    transform: translateY(-1px);
+    background: #be123c;
+}
+/* =========================
+   OFFERS LIST CLEAN
+========================= */
+
+.offers-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.offer-item-clean {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-item-main {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.offer-link-clean {
+    color: var(--cesi-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.offer-link-clean:hover {
+    text-decoration: underline;
+}
+
+.offer-company-clean {
+    color: var(--cesi-dark);
+}
+
+.offer-favorite-form {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* =========================
+   BOUTON FAVORI PETIT
+========================= */
+
+button.btn-favorite-small,
+a.btn-favorite-small,
+input.btn-favorite-small {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 34px !important;
+
+    padding: 6px 12px !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 999px !important;
+
+    background: #e11d48 !important;
+    color: #fff !important;
+
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.18) !important;
+    transform: none !important;
+}
+
+button.btn-favorite-small:hover,
+a.btn-favorite-small:hover,
+input.btn-favorite-small:hover {
+    background: #be123c !important;
+    transform: translateY(-1px) !important;
+    text-decoration: none !important;
+}
+/* =========================
+   OFFERS LIST CLEAN
+========================= */
+
+.offers-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.offer-item-clean {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-item-main {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.offer-link-clean {
+    color: var(--cesi-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.offer-link-clean:hover {
+    text-decoration: underline;
+}
+
+.offer-company-clean {
+    color: var(--cesi-dark);
+}
+
+.offer-favorite-form {
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* =========================
+   BOUTON FAVORI PETIT
+========================= */
+
+button.btn-favorite-small,
+a.btn-favorite-small,
+input.btn-favorite-small {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 34px !important;
+
+    padding: 6px 12px !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 999px !important;
+
+    background: #e11d48 !important;
+    color: #fff !important;
+
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.18) !important;
+    transform: none !important;
+}
+
+button.btn-favorite-small:hover,
+a.btn-favorite-small:hover,
+input.btn-favorite-small:hover {
+    background: #be123c !important;
+    transform: translateY(-1px) !important;
+    text-decoration: none !important;
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.offers-pagination {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.page-link {
+    color: var(--cesi-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-link:hover {
+    text-decoration: underline;
+}
+/* =========================
+   OFFERS LIST CLEAN
+========================= */
+
+.offers-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.offer-item-clean {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-item-main {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.offer-link-clean {
+    color: var(--cesi-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.offer-link-clean:hover {
+    text-decoration: underline;
+}
+
+.offer-company-clean {
+    color: var(--cesi-dark);
+}
+
+.btn-see-offer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: var(--cesi-dark);
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.btn-see-offer:hover {
+    background: #e5e7eb;
+    text-decoration: none;
+}
+
+/* =========================
+   BOUTON FAVORI PAGE DETAIL
+========================= */
+
+.offer-detail-favorite-form {
+    margin-top: 18px;
+}
+
+.btn-detail-favorite {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 22px !important;
+    border: none !important;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%) !important;
+    color: #fff !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 22px rgba(215, 25, 32, 0.18) !important;
+}
+
+.btn-detail-favorite:hover {
+    transform: translateY(-1px);
+}
+/* =========================
+   OFFERS LIST CLEAN
+========================= */
+
+.offers-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.offer-item-clean {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-item-main {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.offer-link-clean {
+    color: var(--cesi-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.offer-link-clean:hover {
+    text-decoration: underline;
+}
+
+.offer-company-clean {
+    color: var(--cesi-dark);
+}
+
+.btn-see-offer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: var(--cesi-dark);
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.btn-see-offer:hover {
+    background: #e5e7eb;
+    text-decoration: none;
+}
+
+/* =========================
+   BOUTON FAVORI PAGE DETAIL
+========================= */
+
+.offer-detail-favorite-form {
+    margin-top: 18px;
+}
+
+.btn-detail-favorite {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 22px !important;
+    border: none !important;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%) !important;
+    color: #fff !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 22px rgba(215, 25, 32, 0.18) !important;
+}
+
+.btn-detail-favorite:hover {
+    transform: translateY(-1px);
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.offers-pagination {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.page-link {
+    color: var(--cesi-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.page-link:hover {
+    text-decoration: underline;
+}
+/* =========================
+   OFFERS LIST CLEAN
+========================= */
+
+.offers-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.offer-item-clean {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-item-main {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.offer-link-clean {
+    color: var(--cesi-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.offer-link-clean:hover {
+    text-decoration: underline;
+}
+
+.offer-company-clean {
+    color: var(--cesi-dark);
+}
+
+.btn-see-offer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: var(--cesi-dark);
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.btn-see-offer:hover {
+    background: #e5e7eb;
+    text-decoration: none;
+}
+
+/* =========================
+   BOUTON FAVORI PAGE DETAIL
+========================= */
+
+.offer-detail-favorite-form {
+    margin-top: 18px;
+}
+
+.btn-detail-favorite {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 22px !important;
+    border: none !important;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%) !important;
+    color: #fff !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 22px rgba(215, 25, 32, 0.18) !important;
+}
+
+.btn-detail-favorite:hover {
+    transform: translateY(-1px);
+}
+/* =========================
+   OFFERS LIST CLEAN
+========================= */
+
+.offers-list-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.offer-item-clean {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eceff3;
+}
+
+.offer-item-main {
+    flex: 1;
+    min-width: 0;
+    font-size: 1rem;
+}
+
+.offer-link-clean {
+    color: var(--cesi-red);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.offer-link-clean:hover {
+    text-decoration: underline;
+}
+
+.offer-company-clean {
+    color: var(--cesi-dark);
+}
+
+.btn-see-offer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: var(--cesi-dark);
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.btn-see-offer:hover {
+    background: #e5e7eb;
+    text-decoration: none;
+}
+
+/* =========================
+   BOUTON FAVORI PAGE DETAIL
+========================= */
+
+.offer-detail-favorite-form {
+    margin-top: 18px;
+}
+
+.btn-detail-favorite {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 14px 22px !important;
+    border: none !important;
+    border-radius: 18px !important;
+    background: linear-gradient(135deg, var(--cesi-red) 0%, var(--cesi-red-dark) 100%) !important;
+    color: #fff !important;
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    box-shadow: 0 10px 22px rgba(215, 25, 32, 0.18) !important;
+}
+
+.btn-detail-favorite:hover {
+    transform: translateY(-1px);
+}
+
+/* =========================
+   PAGINATION OFFRES
+========================= */
+
+.offers-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    margin: 28px 0 8px;
+    flex-wrap: wrap;
+}
+
+.page-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #d71920;
+    background: #ffffff;
+    border: 1.5px solid #f1c4ca;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.page-link:hover {
+    background: #fff5f6;
+    transform: translateY(-1px);
+}
+
+.page-link.active {
+    background: #e31b23;
+    color: #ffffff;
+    border-color: #e31b23;
+    box-shadow: 0 8px 18px rgba(227, 27, 35, 0.18);
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.pagination a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e30613;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #e30613;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pagination a:hover {
+    background: #e30613;
+    color: white;
+}
+
+.pagination a.active {
+    background: #e30613;
+    color: white;
+}
+/* =========================
+   PAGINATION ENTREPRISES
+========================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid #e30613;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #e30613;
+    font-weight: 600;
+    background: #ffffff;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.pagination a:hover {
+    background: #e30613;
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.pagination a.active {
+    background: #e30613;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(227, 6, 19, 0.3);
+}

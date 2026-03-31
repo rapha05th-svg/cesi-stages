@@ -1,0 +1,118 @@
+@media (max-width: 1100px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        min-height: 260px;
+    }
+
+    .stats-grid,
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 900px) {
+    .burger-btn {
+        display: inline-flex;
+    }
+
+    .user-badge {
+        display: none;
+    }
+
+    .header-nav-wrap .container {
+        width: 100%;
+    }
+
+    .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        background: linear-gradient(180deg, #d71920 0%, #b51218 100%);
+        border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .main-nav.is-open {
+        display: flex;
+    }
+
+    .main-nav a {
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        padding: 16px 22px;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .main-nav a:hover {
+        background: rgba(255,255,255,0.10);
+    }
+
+    .logout-form {
+        margin: 0;
+        width: 100%;
+        padding: 16px 22px;
+    }
+
+    .logout-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 760px) {
+    .header-top {
+        padding: 14px 0;
+    }
+
+    .brand-title {
+        font-size: 1.3rem;
+    }
+
+    .brand-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .content-card {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .offer-row,
+    .company-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stats-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-card {
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        margin-bottom: 12px;
+    }
+
+    .hero-glow {
+        display: none;
+    }
+}
