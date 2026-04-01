@@ -144,4 +144,21 @@ $statusColors = [
 .req-message { color:#4b5563; font-size:0.88rem; margin:0 0 8px; line-height:1.5; }
 .req-admin-comment { background:#f9fafb; border-left:3px solid #d71920; border-radius:0 8px 8px 0; padding:10px 14px; font-size:0.85rem; color:#374151; }
 .req-admin-label { font-weight:700; display:block; margin-bottom:4px; color:#d71920; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.04em; }
+
+[data-theme="dark"] .req-title          { color: var(--dk-text); }
+[data-theme="dark"] .req-sub            { color: var(--dk-muted); }
+[data-theme="dark"] .req-form-card      { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .req-form-title     { color: var(--dk-muted); border-bottom-color: var(--dk-border); }
+[data-theme="dark"] .req-form-label     { color: var(--dk-muted); }
+[data-theme="dark"] .req-form-select,
+[data-theme="dark"] .req-form-textarea  { background: var(--dk-surface2); border-color: var(--dk-border); color: var(--dk-text); }
+[data-theme="dark"] .req-form-select:focus,
+[data-theme="dark"] .req-form-textarea:focus { border-color: #d71920; }
+[data-theme="dark"] .req-list-title     { color: var(--dk-muted); }
+[data-theme="dark"] .req-empty          { background: var(--dk-surface); border-color: var(--dk-border); color: var(--dk-muted); }
+[data-theme="dark"] .req-card           { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .req-action-badge   { color: var(--dk-text); }
+[data-theme="dark"] .req-date           { color: var(--dk-muted); }
+[data-theme="dark"] .req-message        { color: #adbac7; }
+[data-theme="dark"] .req-admin-comment  { background: var(--dk-surface2); color: #adbac7; }
 </style>

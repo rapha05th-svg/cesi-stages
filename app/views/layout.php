@@ -49,8 +49,8 @@ function nav_active(string $path, string $target, bool $exact = false): string
     <meta name="apple-mobile-web-app-title" content="CESI Stages">
     <link rel="apple-touch-icon" href="/images/icon-192.svg">
 
-    <link rel="stylesheet" href="/css/base.css?v=6">
-    <link rel="stylesheet" href="/css/layout.css?v=2">
+    <link rel="stylesheet" href="/css/base.css?v=8">
+    <link rel="stylesheet" href="/css/layout.css?v=5">
     <link rel="stylesheet" href="/css/components.css?v=2">
     <link rel="stylesheet" href="/css/pages.css?v=2">
     <link rel="stylesheet" href="/css/responsive.css?v=2">

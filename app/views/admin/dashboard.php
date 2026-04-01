@@ -74,8 +74,8 @@
                 <?php foreach ($recentApps as $app): ?>
                     <div class="dash-top-item">
                         <div style="flex:1;min-width:0">
-                            <div style="font-weight:600;font-size:0.88rem;color:#161b26;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><?= htmlspecialchars($app['firstname'] . ' ' . $app['lastname']) ?></div>
-                            <div style="font-size:0.78rem;color:#667085;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><?= htmlspecialchars($app['offer_title']) ?></div>
+                            <div class="dash-app-name" style="font-weight:600;font-size:0.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><?= htmlspecialchars($app['firstname'] . ' ' . $app['lastname']) ?></div>
+                            <div class="dash-app-offer" style="font-size:0.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><?= htmlspecialchars($app['offer_title']) ?></div>
                         </div>
                         <span style="font-size:0.75rem;color:#9ca3af;flex-shrink:0"><?= date('d/m', strtotime($app['created_at'])) ?></span>
                     </div>
@@ -86,6 +86,20 @@
 
 </div>
 
+<!-- DEMANDES PILOTES -->
+<?php $pendingCount = PilotRequest::pendingCount(); ?>
+<?php if ($pendingCount > 0): ?>
+<div class="dash-section" style="border-left:4px solid #d71920;margin-bottom:20px">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+        <div>
+            <h2 class="dash-section-title" style="margin-bottom:4px">Demandes de pilotes en attente</h2>
+            <p style="color:#d71920;font-weight:700;font-size:0.95rem;margin:0"><?= $pendingCount ?> demande<?= $pendingCount > 1 ? 's' : '' ?> à traiter</p>
+        </div>
+        <a href="/admin/pilot-requests" class="dash-quick-btn">Voir les demandes</a>
+    </div>
+</div>
+<?php endif; ?>
+
 <!-- ACCÈS RAPIDES -->
 <div class="dash-section">
     <h2 class="dash-section-title">Accès rapides</h2>
@@ -94,6 +108,7 @@
         <a href="/admin/offers/create" class="dash-quick-btn">+ Offre</a>
         <a href="/admin/students/create" class="dash-quick-btn">+ Étudiant</a>
         <a href="/admin/pilots/create" class="dash-quick-btn">+ Pilote</a>
+        <a href="/admin/pilot-requests" class="dash-quick-btn dash-quick-btn-secondary">Demandes pilotes</a>
         <a href="/stats" class="dash-quick-btn dash-quick-btn-secondary">Voir les stats</a>
     </div>
 </div>
@@ -130,4 +145,23 @@
 .dash-quick-btn:hover { background: #b5141a; text-decoration: none; }
 .dash-quick-btn-secondary { background: #f3f4f6; color: #374151; }
 .dash-quick-btn-secondary:hover { background: #e5e7eb; }
+
+[data-theme="dark"] .dash-header h1      { color: var(--dk-text); }
+[data-theme="dark"] .dash-sub            { color: var(--dk-muted); }
+[data-theme="dark"] .dash-stat-card      { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .dash-stat-value     { color: var(--dk-text); }
+[data-theme="dark"] .dash-stat-label     { color: var(--dk-muted); }
+[data-theme="dark"] .dash-section        { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .dash-section-title  { color: var(--dk-muted); border-bottom-color: var(--dk-border); }
+[data-theme="dark"] .dash-empty          { color: var(--dk-muted); }
+[data-theme="dark"] .dash-top-item       { border-bottom-color: var(--dk-border); }
+[data-theme="dark"] .dash-top-rank       { background: var(--dk-surface2); color: var(--dk-muted); }
+[data-theme="dark"] .dash-top-name       { color: var(--dk-text); }
+[data-theme="dark"] .dash-top-count      { color: var(--dk-muted); }
+[data-theme="dark"] .dash-quick-btn-secondary { background: var(--dk-surface2); color: var(--dk-muted); }
+[data-theme="dark"] .dash-quick-btn-secondary:hover { background: var(--dk-border); color: var(--dk-text); }
+.dash-app-name  { color: #161b26; }
+.dash-app-offer { color: #667085; }
+[data-theme="dark"] .dash-app-name  { color: var(--dk-text); }
+[data-theme="dark"] .dash-app-offer { color: var(--dk-muted); }
 </style>

@@ -25,22 +25,28 @@
 }
 
 .site-footer {
-    padding: 24px 0 30px;
+    padding: 24px 0 28px;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
+    margin-top: 8px;
 }
 
 .footer-inner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
-    color: #667085;
-    font-size: 0.95rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: #9ca3af;
+    font-size: 0.84rem;
 }
 
 .footer-inner a {
     color: #d71920;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.84rem;
 }
 
 .footer-inner a:hover {
@@ -81,23 +87,49 @@
     width: 58px;
     height: 58px;
     border-radius: 18px;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    border: 1px solid rgba(215, 25, 32, 0.14);
-    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+    background: linear-gradient(145deg, #ffffff 0%, #fff5f5 60%, #ffe8e8 100%);
+    border: 1px solid rgba(215, 25, 32, 0.18);
+    box-shadow:
+        0 4px 16px rgba(215,25,32,0.10),
+        0 1px 4px rgba(15,23,42,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.9);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.brand:hover .brand-logo {
+    transform: scale(1.06);
+    box-shadow:
+        0 0 0 5px rgba(215,25,32,0.10),
+        0 8px 24px rgba(215,25,32,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* Pulsing radial glow */
 .brand-logo::before {
     content: "";
     position: absolute;
-    inset: -28%;
-    background: radial-gradient(circle, rgba(215, 25, 32, 0.12) 0%, transparent 60%);
-    animation: logoGlow 2.2s ease-in-out infinite;
+    inset: 0;
+    background: radial-gradient(circle at 50% 70%, rgba(215,25,32,0.12) 0%, transparent 68%);
+    animation: logoPulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Shimmer sweep */
+.brand-logo::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -110%;
+    width: 55%;
+    height: 100%;
+    background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
+    animation: logoShimmer 3.5s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .logo-futur {
@@ -106,33 +138,31 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 30px;
+    width: 28px;
 }
 
 .logo-futur span {
     display: block;
-    height: 4px;
+    height: 3.5px;
     border-radius: 999px;
-    background: linear-gradient(90deg, #ff3b3b 0%, #d71920 55%, #8f0f14 100%);
+    background: linear-gradient(90deg, #ff6060 0%, #d71920 55%, #ff3b3b 100%);
     box-shadow:
-        0 0 10px rgba(215, 25, 32, 0.35),
-        0 0 18px rgba(215, 25, 32, 0.18);
+        0 0 5px rgba(255,80,80,0.9),
+        0 0 14px rgba(215,25,32,0.55);
     transform-origin: left center;
+    width: 100%;
 }
 
 .logo-futur span:nth-child(1) {
-    width: 100%;
-    animation: logoLine1 1.7s ease-in-out infinite;
+    animation: logoBar1 1.5s cubic-bezier(0.45,0,0.55,1) infinite;
 }
 
 .logo-futur span:nth-child(2) {
-    width: 76%;
-    animation: logoLine2 1.7s ease-in-out infinite 0.12s;
+    animation: logoBar2 1.5s cubic-bezier(0.45,0,0.55,1) infinite 0.2s;
 }
 
 .logo-futur span:nth-child(3) {
-    width: 52%;
-    animation: logoLine3 1.7s ease-in-out infinite 0.24s;
+    animation: logoBar3 1.5s cubic-bezier(0.45,0,0.55,1) infinite 0.4s;
 }
 
 .brand-text {
@@ -244,13 +274,15 @@
     position: relative;
     color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
-    font-size: 0.98rem;
+    font-weight: 600;
+    font-size: 0.92rem;
     white-space: nowrap;
+    letter-spacing: 0.01em;
+    transition: opacity 0.15s;
 }
 
 .main-nav a:hover {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 .main-nav a.active {
@@ -317,48 +349,34 @@
    ANIMATIONS LOGO
 ========================= */
 
-@keyframes logoGlow {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.88;
-    }
-    50% {
-        transform: scale(1.08);
-        opacity: 1;
-    }
+@keyframes logoPulse {
+    0%, 100% { opacity: 0.55; transform: scale(1); }
+    50%       { opacity: 1;    transform: scale(1.12); }
 }
 
-@keyframes logoLine1 {
-    0%, 100% {
-        transform: translateX(0);
-        opacity: 0.95;
-    }
-    50% {
-        transform: translateX(2px);
-        opacity: 1;
-    }
+@keyframes logoShimmer {
+    0%   { left: -110%; opacity: 0; }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { left: 200%;  opacity: 0; }
 }
 
-@keyframes logoLine2 {
-    0%, 100% {
-        transform: translateX(0);
-        opacity: 0.92;
-    }
-    50% {
-        transform: translateX(1px);
-        opacity: 1;
-    }
+@keyframes logoBar1 {
+    0%, 100% { transform: scaleX(1);    opacity: 1;    }
+    35%       { transform: scaleX(0.45); opacity: 0.6;  }
+    65%       { transform: scaleX(0.78); opacity: 0.85; }
 }
 
-@keyframes logoLine3 {
-    0%, 100% {
-        transform: translateX(0);
-        opacity: 0.9;
-    }
-    50% {
-        transform: translateX(2px);
-        opacity: 1;
-    }
+@keyframes logoBar2 {
+    0%, 100% { transform: scaleX(0.7);  opacity: 0.8;  }
+    35%       { transform: scaleX(1);    opacity: 1;    }
+    65%       { transform: scaleX(0.5);  opacity: 0.65; }
+}
+
+@keyframes logoBar3 {
+    0%, 100% { transform: scaleX(0.45); opacity: 0.6;  }
+    35%       { transform: scaleX(0.75); opacity: 0.85; }
+    65%       { transform: scaleX(1);    opacity: 1;    }
 }
 
 /* =========================
@@ -453,4 +471,16 @@
     .header-logo-center {
         display: none !important;
     }
+}
+/* ── Dark mode: logout button ── */
+[data-theme="dark"] .logout-form .btn,
+[data-theme="dark"] .logout-form .btn-light {
+    background: var(--dk-surface2);
+    color: #ff6b6b;
+    border: 1px solid rgba(215,25,32,0.35);
+}
+[data-theme="dark"] .logout-form .btn:hover,
+[data-theme="dark"] .logout-form .btn-light:hover {
+    background: rgba(215,25,32,0.15);
+    color: #ff6b6b;
 }
