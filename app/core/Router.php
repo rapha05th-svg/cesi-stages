@@ -32,7 +32,12 @@ final class Router
 
         if (!isset($this->routes[$method][$normalizedUri])) {
             http_response_code(404);
-            echo 'Not found';
+            $page404 = __DIR__ . '/../views/errors/404.php';
+            if (file_exists($page404)) {
+                require $page404;
+            } else {
+                echo '<h1>404 — Page introuvable</h1>';
+            }
             return;
         }
 

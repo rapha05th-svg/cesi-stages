@@ -96,8 +96,48 @@ if ($isStudent && $userId > 0) {
                                 <label for="cv" class="apply-label">CV (PDF, optionnel)</label>
                                 <input type="file" id="cv" name="cv" accept=".pdf" class="apply-file">
                             </div>
-                            <button type="submit" class="apply-submit">Envoyer ma candidature</button>
+                            <button type="submit" class="apply-submit" id="applyBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            Envoyer ma candidature
+                        </button>
                         </form>
+<script>
+(function () {
+    const form = document.querySelector('.apply-form');
+    if (!form) return;
+    form.addEventListener('submit', function () {
+        /* Confetti léger */
+        const colors = ['#d71920','#ff6b6b','#fff','#fbbf24','#34d399'];
+        for (let i = 0; i < 80; i++) {
+            const el = document.createElement('div');
+            const size = Math.random() * 8 + 4;
+            el.style.cssText = [
+                'position:fixed',
+                'left:' + (Math.random() * 100) + 'vw',
+                'top:-10px',
+                'width:' + size + 'px',
+                'height:' + size + 'px',
+                'background:' + colors[Math.floor(Math.random() * colors.length)],
+                'border-radius:' + (Math.random() > 0.5 ? '50%' : '2px'),
+                'opacity:1',
+                'z-index:99999',
+                'pointer-events:none',
+                'transform:rotate(' + (Math.random() * 360) + 'deg)',
+                'animation:cfetti ' + (Math.random() * 1.5 + 1) + 's ease-in forwards ' + (Math.random() * 0.4) + 's'
+            ].join(';');
+            document.body.appendChild(el);
+            setTimeout(() => el.remove(), 3000);
+        }
+    });
+})();
+</script>
+<style>
+@keyframes cfetti {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+.apply-submit { display: inline-flex; align-items: center; gap: 8px; }
+</style>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -166,8 +206,8 @@ if ($isStudent && $userId > 0) {
 .offer-detail-company-link:hover { text-decoration: underline; }
 .offer-detail-title { font-size: 1.6rem; font-weight: 900; color: #161b26; line-height: 1.2; }
 
-.offer-fav-btn { width: 42px; height: 42px; border-radius: 12px; border: 1px solid #e5e7eb; background: #fff; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s; }
-.offer-fav-btn:hover { border-color: #d71920; background: #fef2f2; transform: none; box-shadow: none; }
+.offer-fav-btn { width: 42px; height: 42px; border-radius: 12px; border: 1px solid #e5e7eb; background: #fff; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.15s; color: #d1d5db; }
+.offer-fav-btn:hover { border-color: #d71920; background: #fef2f2; color: #d71920; transform: none; box-shadow: none; }
 .offer-fav-btn.is-fav { background: #fef2f2; border-color: #fecaca; color: #d71920; }
 
 .offer-detail-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }

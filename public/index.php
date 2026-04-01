@@ -9,7 +9,7 @@ header('X-Frame-Options: DENY');
 header('X-Content-Type-Options: nosniff');
 header('X-XSS-Protection: 1; mode=block');
 header('Referrer-Policy: strict-origin-when-cross-origin');
-header("Content-Security-Policy: default-src 'self' http://static.cesi-stages.local; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' http://static.cesi-stages.local; img-src 'self' http://static.cesi-stages.local data:;");
+header("Content-Security-Policy: default-src 'self' http://static.cesi-stages.local; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' http://static.cesi-stages.local https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' http://static.cesi-stages.local data:;");
 
 require_once __DIR__ . '/../app/core/App.php';
 require_once __DIR__ . '/../app/core/Auth.php';
@@ -46,6 +46,7 @@ require_once __DIR__ . '/../app/models/CompanyFavorite.php';
 require_once __DIR__ . '/../app/models/CompanyRating.php';
 require_once __DIR__ . '/../app/models/AdminStats.php';
 require_once __DIR__ . '/../app/models/PasswordReset.php';
+require_once __DIR__ . '/../app/models/PilotRequest.php';
 
 require_once __DIR__ . '/../app/models/User.php';
 require_once __DIR__ . '/../app/models/Student.php';

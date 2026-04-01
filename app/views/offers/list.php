@@ -7,13 +7,17 @@
     <form method="get" action="/offers" class="offers-filter-form">
 
         <div class="filter-group">
-            <input
-                type="text"
-                name="q"
-                value="<?= htmlspecialchars($q ?? '') ?>"
-                placeholder="Rechercher par titre ou description..."
-                class="filter-input filter-input-wide"
-            >
+            <div class="filter-search-wrap">
+                <input
+                    type="text"
+                    name="q"
+                    id="searchInput"
+                    value="<?= htmlspecialchars($q ?? '') ?>"
+                    placeholder="Rechercher par titre ou description..."
+                    class="filter-input filter-input-wide"
+                >
+                <kbd class="filter-kbd">/</kbd>
+            </div>
         </div>
 
         <div class="filter-group">
@@ -109,44 +113,133 @@
 <?php endif; ?>
 
 <style>
-.offers-page-header { margin-bottom: 20px; }
-.offers-page-header h1 { font-size: 1.5rem; font-weight: 900; color: #161b26; margin-bottom: 4px; }
-.offers-page-sub { color: #667085; font-size: 0.9rem; }
+/* ── SEARCH WRAP ─────────────────────────────────────────── */
+.filter-search-wrap { position: relative; display: flex; align-items: center; }
+.filter-search-wrap .filter-input { padding-right: 36px; }
+.filter-kbd {
+    position: absolute; right: 10px;
+    font-size: 0.7rem; font-weight: 700;
+    padding: 2px 6px; border-radius: 5px;
+    background: #f3f4f6; color: #9ca3af;
+    border: 1px solid #e5e7eb;
+    pointer-events: none;
+    font-family: inherit;
+    transition: opacity 0.2s;
+}
+.filter-search-wrap:focus-within .filter-kbd { opacity: 0; }
+[data-theme="dark"] .filter-kbd { background: var(--dk-surface2); color: var(--dk-muted); border-color: var(--dk-border); }
 
-.offers-filters { margin-bottom: 20px; }
+/* ── EN-TÊTE ─────────────────────────────────────────────── */
+.offers-page-header { margin-bottom: 24px; }
+.offers-page-header h1 { font-size: 1.7rem; font-weight: 900; color: #111827; margin: 0 0 4px; letter-spacing: -0.02em; }
+.offers-page-sub { color: #6b7280; font-size: 0.9rem; margin: 0; }
+
+/* ── FILTRES ─────────────────────────────────────────────── */
+.offers-filters {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 22px;
+    box-shadow: 0 1px 4px rgba(15,23,42,0.04);
+}
 .offers-filter-form { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .filter-group { display: flex; }
-.filter-input { padding: 10px 14px; border: 1px solid #e5e7eb; border-radius: 10px; font-size: 0.9rem; outline: none; background: #fff; }
-.filter-input:focus { border-color: #d71920; }
-.filter-input-wide { min-width: 240px; flex: 1; }
-.filter-select { padding: 10px 14px; border: 1px solid #e5e7eb; border-radius: 10px; font-size: 0.9rem; background: #fff; cursor: pointer; outline: none; }
-.filter-select:focus { border-color: #d71920; }
-.filter-btn-submit { padding: 10px 22px; background: #d71920; color: #fff; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.9rem; white-space: nowrap; }
-.filter-btn-submit:hover { background: #b5141a; transform: none; }
-.filter-btn-reset { padding: 10px 14px; background: #f3f4f6; color: #667085; border-radius: 10px; text-decoration: none; font-size: 0.88rem; white-space: nowrap; }
-.filter-btn-reset:hover { background: #e5e7eb; }
+.filter-input, .filter-select {
+    padding: 9px 14px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    background: #f9fafb;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: inherit;
+    color: #111827;
+}
+.filter-input:focus, .filter-select:focus { border-color: #d71920; background: #fff; }
+.filter-input-wide { min-width: 220px; }
+.filter-select { cursor: pointer; }
+.filter-btn-submit {
+    padding: 9px 22px; background: #d71920; color: #fff;
+    border: none; border-radius: 10px; font-weight: 700;
+    cursor: pointer; font-size: 0.88rem; white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(215,25,32,0.2);
+}
+.filter-btn-submit:hover { background: #b5141a; transform: none; box-shadow: 0 4px 12px rgba(215,25,32,0.3); }
+.filter-btn-reset {
+    padding: 9px 14px; background: #f3f4f6; color: #6b7280;
+    border-radius: 10px; text-decoration: none; font-size: 0.85rem;
+    white-space: nowrap; font-weight: 500;
+}
+.filter-btn-reset:hover { background: #e5e7eb; color: #374151; text-decoration: none; }
 
-.offers-empty { text-align: center; padding: 40px; color: #667085; }
+/* ── LISTE DES OFFRES ────────────────────────────────────── */
+.offers-empty {
+    text-align: center; padding: 60px 20px; color: #9ca3af;
+    background: #fff; border: 1px solid #e5e7eb; border-radius: 16px;
+    font-style: italic;
+}
 
-.offer-item-clean { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; margin-bottom: 10px; box-shadow: 0 2px 6px rgba(15,23,42,0.04); }
-.offer-item-clean:hover { border-color: #d71920; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15,23,42,0.08); }
-.offer-item-main { flex: 1; }
-.offer-link-clean { font-weight: 700; color: #161b26; text-decoration: none; font-size: 1rem; display: block; margin-bottom: 3px; }
-.offer-link-clean:hover { color: #d71920; }
-.offer-company-clean { font-size: 0.85rem; color: #667085; font-weight: 600; }
-.offer-item-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
-.offer-meta-chip { font-size: 0.78rem; padding: 3px 9px; border-radius: 20px; background: #f3f4f6; color: #374151; white-space: nowrap; }
-.offer-salary { background: #EAF3DE; color: #27500A; }
-.offer-date-chip { background: #E6F1FB; color: #185FA5; }
+.offer-item-clean {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 18px 22px;
+    background: #fff;
+    border: 1.5px solid #e5e7eb;
+    border-left: 4px solid #e5e7eb;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 4px rgba(15,23,42,0.04);
+    transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+    text-decoration: none;
+}
+.offer-item-clean:hover {
+    border-color: #d71920;
+    border-left-color: #d71920;
+    transform: translateX(3px);
+    box-shadow: 0 4px 16px rgba(215,25,32,0.08);
+}
+.offer-item-main { flex: 1; min-width: 0; }
+.offer-link-clean {
+    font-weight: 700; color: #111827; text-decoration: none;
+    font-size: 0.98rem; display: block; margin-bottom: 4px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.offer-item-clean:hover .offer-link-clean { color: #d71920; }
+.offer-company-clean {
+    font-size: 0.8rem; color: #d71920; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em;
+}
+.offer-item-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.offer-meta-chip {
+    font-size: 0.75rem; padding: 3px 10px; border-radius: 20px;
+    font-weight: 600; white-space: nowrap;
+    background: #f3f4f6; color: #4b5563;
+}
+.offer-salary { background: #ecfdf5; color: #065f46; }
+.offer-date-chip { background: #eff6ff; color: #1e40af; }
+.offer-apps-chip { background: #f5f3ff; color: #5b21b6; }
 
-.offer-item-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.offer-apps-badge { font-size: 0.8rem; color: #667085; background: #f3f4f6; padding: 3px 8px; border-radius: 20px; }
-.offer-date { font-size: 0.8rem; color: #9ca3af; white-space: nowrap; }
-.btn-see-offer { padding: 7px 16px; background: #d71920; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
-.btn-see-offer:hover { background: #b5141a; text-decoration: none; }
+.offer-item-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.btn-see-offer {
+    padding: 8px 18px; background: #111827; color: #fff;
+    border-radius: 8px; text-decoration: none; font-weight: 700;
+    font-size: 0.82rem; white-space: nowrap; letter-spacing: 0.01em;
+    transition: background 0.15s;
+}
+.btn-see-offer:hover { background: #d71920; text-decoration: none; }
 
-.offers-pagination { display: flex; gap: 6px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
-.page-link { padding: 8px 14px; border: 1px solid #e5e7eb; border-radius: 8px; color: #374151; text-decoration: none; font-size: 0.9rem; }
-.page-link:hover { border-color: #d71920; color: #d71920; }
+/* ── PAGINATION ──────────────────────────────────────────── */
+.offers-pagination {
+    display: flex; gap: 6px; justify-content: center;
+    margin-top: 28px; flex-wrap: wrap;
+}
+.page-link {
+    min-width: 38px; height: 38px; padding: 0 10px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1.5px solid #e5e7eb; border-radius: 8px;
+    color: #374151; text-decoration: none; font-size: 0.88rem; font-weight: 600;
+    transition: all 0.15s;
+}
+.page-link:hover { border-color: #d71920; color: #d71920; text-decoration: none; }
 .page-link.active { background: #d71920; color: #fff; border-color: #d71920; }
 </style>

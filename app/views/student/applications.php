@@ -82,4 +82,18 @@
 
 .myapps-cv-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: #fef2f2; color: #d71920; border-radius: 8px; font-weight: 600; font-size: 0.88rem; text-decoration: none; border: 1px solid #fecaca; }
 .myapps-cv-link:hover { background: #fee2e2; }
+
+[data-theme="dark"] .myapps-header h1    { color: var(--dk-text); }
+[data-theme="dark"] .myapps-sub          { color: var(--dk-muted); }
+[data-theme="dark"] .myapps-card         { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .myapps-offer-title  { color: var(--dk-text); }
+[data-theme="dark"] .myapps-offer-title:hover { color: #ff6b6b; }
+[data-theme="dark"] .myapps-company      { color: var(--dk-muted); }
+[data-theme="dark"] .myapps-date         { color: var(--dk-muted); background: var(--dk-surface2); border-color: var(--dk-border); }
+[data-theme="dark"] .myapps-docs         { border-top-color: var(--dk-border); }
+[data-theme="dark"] .myapps-doc-toggle   { background: var(--dk-surface2); color: var(--dk-text); }
+[data-theme="dark"] .myapps-doc-toggle:hover { background: var(--dk-border); }
+[data-theme="dark"] .myapps-doc-content  { background: var(--dk-bg); color: #adbac7; }
+[data-theme="dark"] .myapps-cv-link      { background: rgba(215,25,32,0.1); border-color: rgba(215,25,32,0.25); color: #ff6b6b; }
+[data-theme="dark"] .myapps-cv-link:hover { background: rgba(215,25,32,0.18); }
 </style>
