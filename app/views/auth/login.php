@@ -70,8 +70,8 @@
 
 .login-password-wrap { position: relative; }
 .login-password-wrap .login-input { padding-right: 44px; }
-.login-eye { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 1rem; padding: 0; box-shadow: none; color: #9ca3af; }
-.login-eye:hover { transform: translateY(-50%); box-shadow: none; background: none; }
+.login-eye { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none !important; border: none !important; cursor: pointer; font-size: 1rem; padding: 0; box-shadow: none !important; color: #9ca3af; width: auto; height: auto; border-radius: 0; }
+.login-eye:hover { transform: translateY(-50%) !important; box-shadow: none !important; background: none !important; }
 
 .login-submit { padding: 13px; background: #d71920; color: #fff; border: none; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-top: 4px; }
 .login-submit:hover { background: #b5141a; transform: none; box-shadow: none; }

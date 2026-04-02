@@ -30,6 +30,8 @@ $router->post('/apply', [ApplicationController::class, 'apply']);
 $router->get('/my-applications', [ApplicationController::class, 'mine']);
 
 $router->get('/pilot/applications', [PilotController::class, 'applications']);
+$router->get('/pilot/requests', [PilotController::class, 'showRequests']);
+$router->post('/pilot/requests/store', [PilotController::class, 'storeRequest']);
 
 $router->get('/admin', [AdminController::class, 'dashboard']);
 
@@ -64,6 +66,10 @@ $router->post('/admin/pilots/delete', [AdminController::class, 'deletePilot']);
 
 $router->get('/admin/users/reset-password', [AdminController::class, 'showResetUserPassword']);
 $router->post('/admin/users/reset-password', [AdminController::class, 'resetUserPassword']);
+
+$router->get('/admin/pilot-requests', [AdminController::class, 'pilotRequests']);
+$router->post('/admin/pilot-requests/approve', [AdminController::class, 'approveRequest']);
+$router->post('/admin/pilot-requests/reject', [AdminController::class, 'rejectRequest']);
 
 $router->get('/mentions-legales', [HomeController::class, 'legalNotice']);
 

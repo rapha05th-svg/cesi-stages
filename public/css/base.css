@@ -282,8 +282,8 @@ textarea:focus-visible {
 [data-theme="dark"] .co-empty         { color: var(--dk-muted); }
 [data-theme="dark"] .co-chip          { background: var(--dk-surface2); color: var(--dk-muted); }
 [data-theme="dark"] .co-chip--offer   { background: rgba(16,185,129,0.12); color: #6ee7b7; }
-[data-theme="dark"] .co-offer-row     { border-color: var(--dk-border); color: var(--dk-text); }
-[data-theme="dark"] .co-offer-row:hover { background: var(--dk-surface2); }
+[data-theme="dark"] .co-offer-row     { background: var(--dk-surface2); border-color: var(--dk-border); color: var(--dk-text); }
+[data-theme="dark"] .co-offer-row:hover { background: var(--dk-bg); border-color: #d71920; }
 [data-theme="dark"] .co-fav-btn       { background: var(--dk-surface2); border-color: var(--dk-border); }
 [data-theme="dark"] .company-fav-btn  { background: var(--dk-surface2); border-color: var(--dk-border); color: var(--dk-muted); }
 [data-theme="dark"] .company-card-desc { color: var(--dk-muted); }

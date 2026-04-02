@@ -560,4 +560,54 @@ final class AdminController extends Controller
 
         $this->redirect('/admin/pilots');
     }
+
+    public function pilotRequests(): void
+    {
+        $this->requireRole(['ADMIN']);
+
+        $this->view('admin/pilot-requests', [
+            'pageTitle' => 'Demandes des pilotes | CESI Stages',
+            'requests'  => PilotRequest::allForAdmin(),
+        ]);
+    }
+
+    public function approveRequest(): void
+    {
+        Csrf::check();
+        $this->requireRole(['ADMIN']);
+
+        $id      = (int) ($_POST['request_id'] ?? 0);
+        $comment = trim($_POST['admin_comment'] ?? '');
+
+        $req = PilotRequest::find($id);
+        if (!$req || $req['status'] !== 'pending') {
+            $this->flash('error', 'Demande introuvable ou déjà traitée.');
+            $this->redirect('/admin/pilot-requests');
+            return;
+        }
+
+        PilotRequest::approve($id, $comment);
+        $this->flash('success', 'Demande approuvée.');
+        $this->redirect('/admin/pilot-requests');
+    }
+
+    public function rejectRequest(): void
+    {
+        Csrf::check();
+        $this->requireRole(['ADMIN']);
+
+        $id      = (int) ($_POST['request_id'] ?? 0);
+        $comment = trim($_POST['admin_comment'] ?? '');
+
+        $req = PilotRequest::find($id);
+        if (!$req || $req['status'] !== 'pending') {
+            $this->flash('error', 'Demande introuvable ou déjà traitée.');
+            $this->redirect('/admin/pilot-requests');
+            return;
+        }
+
+        PilotRequest::reject($id, $comment);
+        $this->flash('success', 'Demande refusée.');
+        $this->redirect('/admin/pilot-requests');
+    }
 }

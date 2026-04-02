@@ -60,4 +60,15 @@
 .wish-btn-see:hover { text-decoration: underline; }
 .wish-btn-remove { width: 32px; height: 32px; border-radius: 50%; border: 1px solid #fecaca; background: #fef2f2; color: #d71920; font-weight: 700; cursor: pointer; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
 .wish-btn-remove:hover { background: #fee2e2; }
+
+[data-theme="dark"] .wish-header h1 { color: var(--dk-text); }
+[data-theme="dark"] .wish-sub { color: var(--dk-muted); }
+[data-theme="dark"] .wish-card { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .wish-card:hover { border-color: #d71920; }
+[data-theme="dark"] .wish-card-title { color: var(--dk-text); }
+[data-theme="dark"] .wish-card-title:hover { color: #d71920; }
+[data-theme="dark"] .wish-card-company { color: var(--dk-muted); }
+[data-theme="dark"] .wish-btn-remove { background: rgba(215,25,32,0.12); border-color: rgba(215,25,32,0.25); }
+[data-theme="dark"] .wish-btn-remove:hover { background: rgba(215,25,32,0.22); }
+[data-theme="dark"] .wish-empty p { color: var(--dk-muted); }
 </style>

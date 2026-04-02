@@ -94,6 +94,19 @@ CREATE TABLE company_ratings (
   CONSTRAINT chk_company_rating CHECK (rating BETWEEN 1 AND 5)
 );
 
+CREATE TABLE pilot_requests (
+  id            INT AUTO_INCREMENT PRIMARY KEY,
+  pilot_id      INT NOT NULL,
+  type          ENUM('company','student','offer') NOT NULL,
+  action        ENUM('create','edit') NOT NULL,
+  message       TEXT NULL,
+  status        ENUM('pending','approved','rejected') NOT NULL DEFAULT 'pending',
+  admin_comment TEXT NULL,
+  created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  CONSTRAINT fk_preq_pilot FOREIGN KEY (pilot_id) REFERENCES pilots(id) ON DELETE CASCADE
+);
+
 CREATE TABLE password_resets (
   id         INT AUTO_INCREMENT PRIMARY KEY,
   user_id    INT NOT NULL,

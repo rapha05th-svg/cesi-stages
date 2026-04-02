@@ -49,7 +49,7 @@ function nav_active(string $path, string $target, bool $exact = false): string
     <meta name="apple-mobile-web-app-title" content="CESI Stages">
     <link rel="apple-touch-icon" href="/images/icon-192.svg">
 
-    <link rel="stylesheet" href="/css/base.css?v=8">
+    <link rel="stylesheet" href="/css/base.css?v=9">
     <link rel="stylesheet" href="/css/layout.css?v=5">
     <link rel="stylesheet" href="/css/components.css?v=2">
     <link rel="stylesheet" href="/css/pages.css?v=2">
@@ -57,6 +57,7 @@ function nav_active(string $path, string $target, bool $exact = false): string
     <link rel="stylesheet" href="/css/admin.css?v=2">
     <style>
         .input-error { border-color: #d71920 !important; background: #fff5f5 !important; }
+        [data-theme="dark"] .input-error { background: rgba(215,25,32,0.12) !important; }
         .validation-error { display: block; color: #d71920; font-size: 0.82rem; margin-top: 4px; font-weight: 500; }
 
         /* Scrollbar discrète */
