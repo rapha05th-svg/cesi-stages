@@ -54,7 +54,7 @@ function nav_active(string $path, string $target, bool $exact = false): string
     <link rel="stylesheet" href="/css/components.css?v=2">
     <link rel="stylesheet" href="/css/pages.css?v=2">
     <link rel="stylesheet" href="/css/responsive.css?v=2">
-    <link rel="stylesheet" href="/css/admin.css?v=2">
+    <link rel="stylesheet" href="/css/admin.css?v=3">
     <style>
         .input-error { border-color: #d71920 !important; background: #fff5f5 !important; }
         [data-theme="dark"] .input-error { background: rgba(215,25,32,0.12) !important; }

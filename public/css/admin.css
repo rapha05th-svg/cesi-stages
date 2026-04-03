@@ -47,6 +47,35 @@
 .admin-empty { text-align: center; padding: 40px; color: #667085; font-style: italic; }
 
 /* =====================
+   DARK MODE
+===================== */
+[data-theme="dark"] .admin-page-title { color: var(--dk-text); }
+[data-theme="dark"] .admin-back { color: var(--dk-muted); }
+[data-theme="dark"] .admin-back:hover { color: var(--dk-red); }
+[data-theme="dark"] .admin-empty { color: var(--dk-muted); }
+
+[data-theme="dark"] .admin-search-input { background: var(--dk-bg); border-color: var(--dk-border); color: var(--dk-text); }
+[data-theme="dark"] .admin-search-input:focus { border-color: #d71920; }
+
+[data-theme="dark"] .admin-table-wrap { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .admin-table thead { background: var(--dk-bg); border-bottom-color: var(--dk-border); }
+[data-theme="dark"] .admin-table th { color: var(--dk-muted); }
+[data-theme="dark"] .admin-table td { color: var(--dk-text); border-bottom-color: var(--dk-border); }
+[data-theme="dark"] .admin-table tbody tr:hover { background: var(--dk-surface2); }
+
+[data-theme="dark"] .admin-pagination { background: var(--dk-bg); border-top-color: var(--dk-border); }
+[data-theme="dark"] .admin-pagination-info { color: var(--dk-muted); }
+[data-theme="dark"] .admin-page-btn { background: var(--dk-surface); border-color: var(--dk-border); color: var(--dk-muted); }
+[data-theme="dark"] .admin-page-btn:hover { border-color: #d71920; color: var(--dk-red); }
+
+[data-theme="dark"] .admin-form-card { background: var(--dk-surface); border-color: var(--dk-border); }
+[data-theme="dark"] .admin-form-label { color: var(--dk-muted); }
+[data-theme="dark"] .admin-form-hint { color: var(--dk-muted); }
+[data-theme="dark"] .admin-form-input,
+[data-theme="dark"] .admin-form-select,
+[data-theme="dark"] .admin-form-textarea { background: var(--dk-bg); border-color: var(--dk-border); color: var(--dk-text); }
+
+/* =====================
    ADMIN FORMS
 ===================== */
 .admin-form-wrap { max-width: 600px; margin: 0 auto; }
